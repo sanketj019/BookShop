@@ -9,6 +9,7 @@ import { BooksComponent } from './books/books.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
     declarations: [
@@ -16,8 +17,7 @@ import { RegisterComponent } from './auth/register/register.component';
         BookComponent,
         BooksComponent,
         CartComponent,
-        LoginComponent,
-        RegisterComponent
+
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -26,6 +26,7 @@ import { RegisterComponent } from './auth/register/register.component';
         AppRoutingModule,
         // BooksModule,
         FormsModule,
+        AuthModule,
     ]
 })
 export class AppModule { }
