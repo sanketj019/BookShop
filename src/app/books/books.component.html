@@ -1,0 +1,20 @@
+<p>Programming Books List</p>
+<button (click)="toggleBooks()">
+  <ng-container *ngIf="!isShowing">Show Books</ng-container>
+  <span *ngIf="isShowing"> Hide Books</span>
+</button> <!--Event Handling--><br><br>
+
+<ul *ngIf="isShowing">
+  <ng-container *ngFor="let singleBook of books; let i=index">
+    <app-book [book]="singleBook"></app-book>
+  </ng-container>
+
+</ul>
+
+<div>
+  <input type="text" placeholder="" (input)="handleInput($event)"/>
+  <p>{{myName}}</p>
+  <input type="text" placeholder="myName2WayBinding" [(ngModel)]="myName2WayBinding"/>
+  <p>{{myName2WayBinding}}</p>
+</div>
+
