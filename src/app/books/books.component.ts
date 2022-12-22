@@ -11,6 +11,8 @@ import { BooksService } from './books.service';
 export class BooksComponent implements OnInit {
 
   books:Book[] = [];
+  sortByParam='amount';
+  sortDirection='asc';
 
   constructor(private booksService: BooksService) {
 

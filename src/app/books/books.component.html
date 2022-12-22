@@ -1,20 +1,41 @@
 <p>Programming Books List</p>
-<button (click)="toggleBooks()">
+<!-- <button (click)="toggleBooks()">
   <ng-container *ngIf="!isShowing">Show Books</ng-container>
   <span *ngIf="isShowing"> Hide Books</span>
-</button> <!--Event Handling--><br><br>
+</button> <Event Handling><br><br> -->
 
-<ul *ngIf="isShowing">
-  <ng-container *ngFor="let singleBook of books; let i=index">
-    <app-book [book]="singleBook"></app-book>
-  </ng-container>
+  <div class="col mt-4 center text-end sort">
+    <label class="sortBy" style="padding: 10px;">Sort by</label>
+    <select [(ngModel)]="sortByParam"
+    class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+      <option value="name">Title</option>
+      <option value="amount">Price</option>
+    </select>
+    <select *ngIf="sortByParam == 'amount'" [(ngModel)]="sortDirection" style="margin: 10px;"
+     class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+      <option value="asc">Low to High</option>
+      <option value="desc">High to Low</option>
+    </select>
 
+    <select *ngIf="sortByParam == 'name'" [(ngModel)]="sortDirection"
+    class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+      <option value="asc">A - Z</option>
+      <option value="desc">Z - A</option>
+    </select>
+  </div>
+
+  <ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+    <ng-container *ngFor="let singleBook of books | sort : [sortByParam, sortDirection]; let i=index">
+        <app-book [book]="singleBook" class="w-1/2 p-5 text-center">
+        </app-book>
+    </ng-container>
 </ul>
 
-<div>
+
+<!-- <div>
   <input type="text" placeholder="" (input)="handleInput($event)"/>
   <p>{{myName}}</p>
   <input type="text" placeholder="myName2WayBinding" [(ngModel)]="myName2WayBinding"/>
   <p>{{myName2WayBinding}}</p>
-</div>
+</div> -->
 

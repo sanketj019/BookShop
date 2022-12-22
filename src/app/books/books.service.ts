@@ -10,6 +10,8 @@ export class BooksService {
 
   constructor() { }
 
+
+
   getBooks(){
     return[
       {
@@ -23,6 +25,12 @@ export class BooksService {
       author:'David Thomas',
       src:'https://m.media-amazon.com/images/I/51yaxPX4BFL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg',
       amount:800
+    },
+    {
+      name:'Gmatic Programmer',
+      author:'David Thomas',
+      src:'https://m.media-amazon.com/images/I/51yaxPX4BFL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg',
+      amount:900
     }
     ]
   }

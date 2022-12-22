@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthModule } from './auth/auth.module';
+import { SortPipe } from './shared/sort.pipe';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
         BookComponent,
         BooksComponent,
         CartComponent,
+        SortPipe
 
     ],
     providers: [],
